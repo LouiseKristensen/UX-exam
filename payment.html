@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="css/payment.css">
+    <script src="js/navigationMenu.js" type="module"></script>
+    <script src="js/logincheck.js" type="module"></script>
+    <script src="js/logout.js" type="module"></script>
+    <script src="js/payment.js" type="module"></script>
+
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav>
+        <!-- MOBILE SIDEBAR -->
+        <ul class="sidebar">
+            <li><a href="#" id="closeSidebar">X</a></li>
+
+            <li><a href="products.html">Products</a></li>
+            <li><a href="signup.html">Signup</a></li>
+            <li><a href="login.html" id="loginMobile">Login</a></li>
+            <li class="hidden" id="logoutMobile"><button id="btnLogoutMobile">Log out</button></li>
+            <li><a href="shoppingcart.html">Shoppingcart</a></li>
+        </ul>
+
+        <!-- DESKTOP NAV -->
+        <ul>
+            <li><a href="index.html">Threadly</a></li>
+
+            <li class="hideOnMobile"><a href="products.html">Products</a></li>
+            <li class="hideOnMobile"><a href="signup.html">Signup</a></li>
+            <li class="hideOnMobile" id="login"><a href="login.html">Login</a></li>
+            <li class="hideOnMobile hidden" id="logout"><button id="btnLogout">Log out</button></li>
+            <li class="hideOnMobile hidden" id="shoppingcard"><a href="shoppingcart.html">Shoppingcart</a></li>
+
+            <li class="menuButton"><a href="#" id="openSidebar">Menu</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO BANNER -->
+    <section class="hero underpage">
+        <section class="hero-content">
+            <h1>Payment</h1>
+            <h2><a href="index.html">Home</a> > <a href="shoppingcart.html">Shoppingcart</a> > <a href="payment.html">Payment</a></h2>
+        </section>
+    </section>
+  
+    <main>
+        <form id="formPayment">
+            <section>
+                <header>
+                    <h3>Delivery Address</h3>
+                </header>
+                <div>
+                    <label for="deliveryName">Full name</label>
+                    <input type="text" name="deliveryName" required>
+                </div>
+                <div>
+                    <label for="deliveryStreet">Street address</label>
+                    <input type="text" name="deliveryStreet" required>
+                </div>
+                <div>
+                    <label for="deliveryCity">City</label>
+                    <input type="text" name="deliveryCity" required>
+                </div>
+                <div>
+                    <label for="deliveryZip">Postal code</label>
+                    <input type="text" name="deliveryZip" required>
+                </div>
+            </section>
+            <section>
+                <header>
+                    <h4>Billing Address</h4>
+                </header>
+                <div id="billing-fields">
+                    <div>
+                        <label for="billingName">Full name</label>
+                        <input type="text" name="billingName">
+                    </div>
+                    <div>
+                        <label for="billingStreet">Street address</label>
+                        <input type="text" name="billingStreet">
+                    </div>
+                    <div>
+                        <label for="billingCity">City</label>
+                        <input type="text" name="billingCity">
+                    </div>
+                    <div>
+                        <label for="billingZip">Postal code</label>
+                        <input type="text" name="billingZip">
+                    </div>
+                </div>
+            </section>
+            <section>
+                <header>
+                    <h5>Payment Information</h5>
+                </header>
+                <div>
+                    <label for="cardName">Cardholder name</label>
+                    <input type="text" name="cardName" required>
+                </div>
+                <div>
+                    <label for="cardNumber">Card Number</label>
+                    <input 
+                        type="text"
+                        name="cardNumber"
+                        maxlength="19"
+                        placeholder="1234 5678 9012 3456"
+                        required
+                        pattern="^[0-9\s]{13,19}$"
+                    >
+                </div>
+                <div class="card-info">
+                    <div>
+                        <label for="expiry">Expiry (MM/YY)</label>
+                        <input type="text" name="expiry" placeholder="08/27" required pattern="^(0[1-9]|1[0-2])\/\d{2}$">
+                    </div>
+                    <div>
+                        <label for="cvc">CVC</label>
+                        <input type="text" name="cvc" maxlength="4" required pattern="^[0-9]{3,4}$">
+                    </div>
+                </div>
+            </section>
+            <button type="submit" class="submit-btn">Complete Purchase</button>
+        </form>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <section class="threadly">
+            <header>
+                <h6>Threadly</h6>
+            </header>
+            <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Job</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </section>
+        <section class="customer-care">
+            <header>
+                <h6>Customer Care</h6>
+            </header>
+            <ul>
+                <li><a href="#">Siza Guide</a></li>
+                <li><a href="#">Help & FAQs</a></li>
+                <li><a href="#">Return My Order</a></li>
+            </ul>
+        </section>
+        <section class="terma-policies">
+            <header>
+                <h6>Terma & Policies</h6>
+            </header>
+            <ul>
+                <li><a href="#">Shipping Info</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms Conditions</a></li>
+            </ul>
+        </section>
+        <section class="follow-us">
+            <header>
+                <h6>Follow Us</h6>
+            </header>
+            <ul>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Pinterest</a></li>
+            </ul>
+        </section>
+    </footer>
+
+    <dialog id="dialogPayment">
+        <header>
+            <h1>Order Received</h1>
+            <button class="close">&times;</button>
+        </header>
+
+        <section>
+            <h3>Delivery Address</h3>
+            <p>Full name: <span id="form-delivery-name"></span></p>
+            <p>Street: <span id="form-delivery-street"></span></p>
+            <p>City: <span id="form-delivery-city"></span></p>
+            <p>Postal code: <span id="form-delivery-zip"></span></p>
+        </section>
+
+        <section>
+            <h4>Billing Address</h4>
+            <p>Full name: <span id="form-billing-name"></span></p>
+            <p>Street: <span id="form-billing-street"></span></p>
+            <p>City: <span id="form-billing-city"></span></p>
+            <p>Postal code: <span id="form-billing-zip"></span></p>
+        </section>
+    </dialog>
+</body>
+</html>

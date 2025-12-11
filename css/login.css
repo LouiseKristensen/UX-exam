@@ -1,0 +1,41 @@
+@import "./signup.css"; 
+
+main{
+#formLogin{
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    label{
+        display: block;
+        margin-bottom: 0.35rem;
+        font-weight: 600;
+        color: var(--colorFontBlack);
+    }
+
+    input{
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border: none;
+        /* border-radius: 0.5rem; */
+        font-size: 1rem;
+        background-color: #F1E3CD;
+    }
+
+    button{
+        width: 100%;
+        padding: 0.9rem;
+        border: none;
+        background-color: var(--colourBgMain);
+        color: var(--colorFontWhite);
+        /* border-radius: 0.5rem; */
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+
+        &:hover{
+            opacity: 0.9;
+        }
+    }
+}
+}

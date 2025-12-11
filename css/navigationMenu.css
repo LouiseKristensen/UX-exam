@@ -1,0 +1,103 @@
+@import "./variable.css";
+
+nav{
+  background-color: var(--colourBgMain);
+  padding: 20px;
+
+  ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .hideOnMobile {
+      display: none;
+    }
+
+    .hidden{
+      display: none !important;
+    }
+
+    li{
+      &:first-child{
+      margin-right: auto;
+      }
+
+      #btnLogout{
+        border: none;
+        background-color: var(--colourBgMain);
+        color: var(--colorFontWhite);
+        font-size: var(--fontHeader);
+        font-weight: var(--fontWeightSemibold);
+
+        &:hover {
+          background-color: #F1E3CD;
+          color: black;
+          cursor: pointer;
+        }
+      }
+
+      > a {
+        height: 100%;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        color: var(--colorFontWhite);
+        font-size: var(--fontHeader);
+        font-weight: var(--fontWeightSemibold);
+
+        &:hover {
+          background-color: #F1E3CD;
+          color: black;
+          cursor: pointer;
+        }
+      }
+    }  
+  }
+}
+
+
+.sidebar{
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index:  999;
+  background-color: var(--colourBgMain);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: var(--fontHeader);
+  font-weight: var(--fontWeightSemibold);
+  color: var(--colorFontWhite);
+
+  &.active{
+    display: flex;
+  }
+
+  li{
+    width: 100%;
+
+    a{
+      width: 100%;
+    }
+  }
+}
+
+@media(min-width: 700px){
+  nav > ul > li{
+    padding: 0 30px;
+  }
+  nav > ul >.hideOnMobile{
+    display: block;
+  }
+  nav > ul > .menuButton{
+    display: none;
+  }
+  .sidebar{
+    display: none !important;
+  }
+}

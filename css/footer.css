@@ -1,0 +1,51 @@
+@import "./variable.css";
+
+footer{
+  display: grid;
+  background-color: var(--colourBgMain);
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 30px;
+
+  section {
+    display: flex;
+    flex-direction: column;
+
+    header h6 {
+      margin-bottom: 10px;
+      color: var(--colorFontWhite); 
+      font-size: var(--fontFooter); 
+      font-weight: var(--fontWeightSemibold);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 5px;
+
+        a {
+          text-decoration: none;
+          color: var(--colorFontWhite); 
+
+          &:hover {
+            background-color: #F1E3CD;
+            color: black;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(min-width: 600px){
+  footer{
+    grid-template-columns: repeat(4, 1fr);
+
+    section{
+      align-items: center;
+    }
+  }
+}

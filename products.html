@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="css/product.css">
+    <script src="js/navigationMenu.js" type="module"></script>
+    <script src="js/products.js" type="module"></script>
+    <script src="js/logincheck.js" type="module"></script>
+</head>
+<body>
+    <nav>
+        <!-- MOBILE SIDEBAR -->
+        <ul class="sidebar">
+            <li><a href="#" id="closeSidebar">X</a></li>
+
+            <li><a href="products.html">Products</a></li>
+            <li><a href="#">Signup</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Logout</a></li>
+            <li><a href="#">Shoppingcart</a></li>
+        </ul>
+
+        <!-- DESKTOP NAV -->
+        <ul>
+            <li><a href="index.html">Threadly</a></li>
+
+            <li class="hideOnMobile"><a href="products.html">Products</a></li>
+            <li class="hideOnMobile"><a href="signup.html">Signup</a></li>
+            <li class="hideOnMobile" id="login"><a href="login.html">Login</a></li>
+            <li class="hideOnMobile hidden" id="logout"><button id="btnLogout">Log out</button></li>
+            <li class="hideOnMobile hidden" id="shoppingcard"><a href="shoppingcart.html">Shoppingcart</a></li>
+
+            <li class="menuButton"><a href="#" id="openSidebar">Menu</a></li>
+        </ul>
+    </nav>
+
+
+  <section class="hero underpage">
+    <section class="hero-content">
+        <h1>Shop</h1>
+        <h2><a href="index.html">Home</a> > <a href="products.html">Products</a></h2>
+    </section>
+  </section>
+
+    <main>
+        <!-- API PRODUCTS CARDS -->
+        <section id="products-list">
+            <header>
+                <h4>Products</h4>
+            </header>
+            <template id="product-card">
+                <article class="product-article">
+                    <a href="" target="_self">
+                        <img src="" alt="">
+                    </a>
+                    <header>
+                        <h5>
+                            <a href="" target="_self"></a>
+                        </h5>
+                        <p class="price"></p>
+                    </header>
+                </article>
+            </template>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <section class="threadly">
+            <header>
+                <h6>Threadly</h6>
+            </header>
+            <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Job</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </section>
+        <section class="customer-care">
+            <header>
+                <h6>Customer Care</h6>
+            </header>
+            <ul>
+                <li><a href="#">Siza Guide</a></li>
+                <li><a href="#">Help & FAQs</a></li>
+                <li><a href="#">Return My Order</a></li>
+            </ul>
+        </section>
+        <section class="terma-policies">
+            <header>
+                <h6>Terma & Policies</h6>
+            </header>
+            <ul>
+                <li><a href="#">Shipping Info</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms Conditions</a></li>
+            </ul>
+        </section>
+        <section class="follow-us">
+            <header>
+                <h6>Follow Us</h6>
+            </header>
+            <ul>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Pinterest</a></li>
+            </ul>
+        </section>
+    </footer> 
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/navigationMenu.js" type="module"></script>
+    <script src="js/login.js" type="module"></script>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav>
+        <!-- MOBILE SIDEBAR -->
+        <ul class="sidebar">
+            <li><a href="#" id="closeSidebar">X</a></li>
+
+            <li><a href="products.html">Products</a></li>
+            <li><a href="#">Signup</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Logout</a></li>
+            <li><a href="#">Shoppingcart</a></li>
+        </ul>
+
+        <!-- DESKTOP NAV -->
+        <ul>
+            <li><a href="index.html">Threadly</a></li>
+
+            <li class="hideOnMobile"><a href="products.html">Products</a></li>
+            <li class="hideOnMobile"><a href="signup.html">Signup</a></li>
+            <li class="hideOnMobile" id="login"><a href="login.html">Login</a></li>
+            <li class="hideOnMobile hidden" id="logout"><button id="btnLogout">Log out</button></li>
+            <li class="hideOnMobile hidden" id="shoppingcard"><a href="shoppingcart.html">Shoppingcart</a></li>
+
+            <li class="menuButton"><a href="#" id="openSidebar">Menu</a></li>
+        </ul>
+    </nav>
+  
+    <main>
+        <!-- CATEGORIES CARD -->
+        <section class="contact">
+            <picture>
+                <source media="(min-width:800px)" srcset="images/background3-desktop.avif">
+                <img src="images/background3-tablet.avif" alt="Atmospheric image of a clothes rack with various blazers">
+            </picture>
+            <div class="form-content">
+                <header>
+                    <h1>Login</h1>
+                </header>
+                <form id="formLogin">
+                    <div>
+                        <label for="txtEmail">E-mail</label>
+                        <input type="email" id="txtEmail" required>
+                    </div>
+                    <div>
+                        <label for="txtPassword">Password</label>
+                        <input type="password" id="txtPassword" required>
+                    </div>
+                    <div>
+                        <button type="submit">Log in</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <section class="threadly">
+            <header>
+                <h6>Threadly</h6>
+            </header>
+            <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Job</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </section>
+        <section class="customer-care">
+            <header>
+                <h6>Customer Care</h6>
+            </header>
+            <ul>
+                <li><a href="#">Siza Guide</a></li>
+                <li><a href="#">Help & FAQs</a></li>
+                <li><a href="#">Return My Order</a></li>
+            </ul>
+        </section>
+        <section class="terma-policies">
+            <header>
+                <h6>Terma & Policies</h6>
+            </header>
+            <ul>
+                <li><a href="#">Shipping Info</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms Conditions</a></li>
+            </ul>
+        </section>
+        <section class="follow-us">
+            <header>
+                <h6>Follow Us</h6>
+            </header>
+            <ul>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Pinterest</a></li>
+            </ul>
+        </section>
+    </footer>
+    <dialog id="mdlInfo">
+        <header>
+            <h1></h1>
+            <button class="close">&times;</button>
+        </header>
+        <p></p>
+    </dialog>
+</body>
+</html>

@@ -1,0 +1,108 @@
+@import "./home.css"; 
+
+.underpage{
+    height: var(--heroHeightUnderpage);
+
+    .hero-content{
+        align-items: start;
+        padding-left: 20px;
+
+        h2 {
+            font-size: 15px;
+
+            > a{
+                inherits: h2;
+                color: var(--colorFontWhite);
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+main{
+    padding: 50px 15px;
+
+    #card-info{
+        section{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+
+            img{
+                /* height: 200px; */
+                width: 200px;
+                height: auto;
+            }
+        }
+        
+        #card-details{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            header > h3{
+                font-size: var(--fontSectionTitles);
+            }
+
+            #item-rating{
+                font-weight: var(--fontWeightSemibold);
+
+                &:before{
+                    content: "Rating: ";
+                }
+            }
+
+            #item-price{
+                font-weight: var(--fontWeightSemibold);
+
+                &:before{
+                    content: "Price: "; 
+                }
+            }
+
+            button{
+                padding: 10px;
+                background-color: var(--colorBgSecond);
+                color: var(--colorFontBlack);
+                border: none;
+                margin-top: 15px;
+                font-weight: var(--fontWeightSemibold);
+
+                &:hover{
+                    background-color: var(--colourBgMain);
+                    color: var(--colorFontWhite);
+                }
+            }
+        }
+
+    }
+}
+
+@media(min-width: 600px){
+    main{
+        padding: 40px;
+
+        #card-info{
+            display: flex;
+            gap: 20px;
+
+            #card-details > button{
+                width: 50%;
+            }
+        }
+
+    }
+}
+
+@media(min-width: 900px) {
+  main{
+    #card-info{
+        gap: 50px;
+
+        section > img{
+            width: 400px;
+            height: auto;
+        }
+    }
+  }
+}
