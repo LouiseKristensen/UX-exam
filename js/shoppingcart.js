@@ -24,69 +24,68 @@ document.querySelector("#shoppingcartbtn").addEventListener("click", (e) => {
             });
             
         localStorage.setItem(LOCAL_STORAGE_SHOPPINGCART, JSON.stringify(cart));
-        totalProductsCount(); 
-        totalPriceCount(); 
+        // totalProductsCount(); 
+        // totalPriceCount(); 
 
 
         const shoppingcart = JSON.parse(localStorage.getItem(LOCAL_STORAGE_SHOPPINGCART))
-        const product = shoppingcart[shoppingcart.length - 1];
+        shoppingcart.forEach(product => { 
         
-        const productscard = document.querySelector("#product-card").content.cloneNode(true); 
-        const article = productscard.querySelector("article");
-        article.classList.add("product-article");
+            const productscard = document.querySelector("#product-card").content.cloneNode(true); 
+            const article = productscard.querySelector("article");
+            article.classList.add("product-article");
 
-        const linkURL = `product.html?id=${product.id}`
+            const linkURL = `product.html?id=${product.id}`
 
-        // Title with link and price 
-        const headerLink = productscard.querySelector("h3 > a"); 
-        headerLink.innerText = product.title; 
-        assignLink(headerLink, linkURL, product.title); 
-        
-        const price = productscard.querySelector(".price"); 
-        price.innerText = product.price; 
+            // Title with link and price 
+            const headerLink = productscard.querySelector("h3 > a"); 
+            headerLink.innerText = product.title; 
+            assignLink(headerLink, linkURL, product.title); 
+            
+            const price = productscard.querySelector(".price"); 
+            price.innerText = [product.price]; 
 
-        // image with link 
-        const pictureLink = productscard.querySelector("a:has(img)"); 
-        assignLink(pictureLink, linkURL, product.title); 
+            // image with link 
+            const pictureLink = productscard.querySelector("a:has(img)"); 
+            assignLink(pictureLink, linkURL, product.title); 
 
-        const thumbnail = productscard.querySelector("img"); 
-        thumbnail.setAttribute("src", product.image); 
-        thumbnail.setAttribute("alt", product.title); 
-        thumbnail.classList.add("thumbnail"); 
+            const thumbnail = productscard.querySelector("img"); 
+            thumbnail.setAttribute("src", product.img); 
+            thumbnail.setAttribute("alt", product.title); 
+            thumbnail.classList.add("thumbnail"); 
 
-        const remove = productscard.querySelector(".remove")
-        remove.innerText = "Remove"
+            const remove = productscard.querySelector(".remove")
+            remove.innerText = "Remove"
 
-        remove.addEventListener("click", (e) => {
-            e.preventDefault(); 
-            this.closest("article").remove();
+            // remove.addEventListener("click", (e) => {
+            //     e.preventDefault(); 
+            //     this.closest("article").remove();
 
-            let productcardRemove = JSON.parse(localStorage.getItem(LOCAL_STORAGE_SHOPPINGCART));
-            const productcardToRemove = productcardRemove.findIndex(remove => remove.id === id && remove.title === title && remove.price === price && remove.image === img)
+            //     let productcardRemove = JSON.parse(localStorage.getItem(LOCAL_STORAGE_SHOPPINGCART));
+            //     const productcardToRemove = productcardRemove.findIndex(remove => remove.id === id && remove.title === title && remove.price === price && remove.image === img)
 
-            productcardRemove = productcardRemove.toSlice(productcardToRemove, 1); 
-            localStorage.setItem(LOCAL_STORAGE_SHOPPINGCART, JSON.stringify(productcardRemove))
-            totalProductsCount(); 
-            totalPriceCount(); 
-         
+            //     productcardRemove = productcardRemove.toSlice(productcardToRemove, 1); 
+            //     localStorage.setItem(LOCAL_STORAGE_SHOPPINGCART, JSON.stringify(productcardRemove))
+            //     // totalProductsCount(); 
+            //     // totalPriceCount(); 
+            
+            // })
+ 
+            document.querySelector("#products-list").appendChild(productscard);
         })
 
-        productscard.append(thumbnail, headerLink, price, remove);  
-        document.querySelector("#products-list").appendChild(productscard);
-
-
-        const totalProductsCount = () => {
-            const totalProducts = document.querySelector('#total-products'); 
-            totalProducts.innerText = cart.length
-        };
+        // const totalProductsCount = () => {
+        //     const totalProducts = document.querySelector('#total-products'); 
+        //     totalProducts.innerText = cart.length
+        // };
 
         
-        const totalPriceCount = () => {
-            const totalPrice = document.querySelector("#total-price"); 
-            let cartItem = JSON.parse(localStorage.getItem(LOCAL_STORAGE_SHOPPINGCART)) || [];
-            let total = cartItem.price 
-            totalPrice.innerText = total 
-        }; 
+        // const totalPriceCount = () => {
+        //     const totalPrice = document.querySelector("#total-price"); 
+        //     let cartItem = JSON.parse(localStorage.getItem(LOCAL_STORAGE_SHOPPINGCART)) || [];
+        //     let total = cartItem.price 
+        //     totalPrice.innerText = total 
+        // }; 
 
     }) 
     .catch(error => console.log(error)); 
