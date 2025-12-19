@@ -11,6 +11,7 @@ fetch(`${BASE_URL}/products`)
 .then(data => {
     console.log(data)
 
+    // create article for all the products 
     const fragment = document.createDocumentFragment(); 
     data.forEach(product =>{
         const productscard = document.querySelector("#product-card").content.cloneNode(true); 
@@ -20,7 +21,7 @@ fetch(`${BASE_URL}/products`)
         const linkURL = `product.html?id=${product.id}`
 
         // Title with link and price 
-        const headerLink = productscard.querySelector("h5 > a"); 
+        const headerLink = productscard.querySelector("h4,h3 > a"); 
         headerLink.innerText = product.title; 
         assignLink(headerLink, linkURL, product.title); 
         

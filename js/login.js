@@ -2,9 +2,11 @@ import { USERS_BASE_URL } from './config.js';
 import { showModal } from './modal.js';
 import { LOCAL_STORAGE_USER_EMAIL } from './config.js';
 
+// login form 
 document.querySelector('#formLogin').addEventListener('submit', (e) => {
     e.preventDefault();
 
+    // get users and save email in local storage 
     fetch(`${USERS_BASE_URL}/users`)
     .then(response => response.json())
     .then(data => {

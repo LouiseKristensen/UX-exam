@@ -1,6 +1,10 @@
-import { LOCAL_STORAGE_SHOPPINGCART } from "./config";
+import { LOCAL_STORAGE_USER_EMAIL } from "./config.js";
 
-document.querySelector('#formPayment').addEventListener('submit', (e) => {
+const userEmail = localStorage.getItem(LOCAL_STORAGE_USER_EMAIL);
+const cartKey = localStorage.getItem(`SHOPPING_CART_${userEmail}`);
+
+// checkout form 
+document.querySelector('#formCheckout').addEventListener('submit', (e) => {
     e.preventDefault(); 
 
     const deliveryName = e.target.deliveryName.value.trim(); 
@@ -13,7 +17,8 @@ document.querySelector('#formPayment').addEventListener('submit', (e) => {
     const billingZip = e.target.billingZip.value.trim();
 
     
-    const dialog = document.querySelector('#dialogPayment');
+    // dialog content 
+    const dialog = document.querySelector('#dialogcheckout');
 
     dialog.querySelector('#form-delivery-name').innerText = deliveryName;
     dialog.querySelector('#form-delivery-street').innerText = deliveryStreet;
@@ -28,12 +33,14 @@ document.querySelector('#formPayment').addEventListener('submit', (e) => {
 
     e.target.reset();
 
+    // close dialog and show index 
     dialog.querySelector('button.close').addEventListener('click', (e) => {
         e.preventDefault();
 
         dialog.close();
+        location.replace('index.html');
+        
     });
 
-    localStorage.removeItem(LOCAL_STORAGE_SHOPPINGCART);
-    location.href = 'index.html';
+    localStorage.removeItem(cartKey);
 });

@@ -1,0 +1,45 @@
+@import "variable.css";
+
+dialog {
+  width: var(--dialog);
+  border: none;
+  padding: 1.5rem;
+  background-color: var(--colorFontWhite);
+  margin: auto;
+  
+
+  &::backdrop{
+    background-color: var(--colorDialogBg);
+  }
+
+  header{
+    margin-bottom: 1rem;
+
+    h2{
+      font-size: 1.4rem;
+      color: var(--colorFontBlack);
+    }
+  }
+
+  p{
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    color: var(--colorFontBlack);
+  }
+
+  .close{
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--colorCloseDialog)
+
+    &:hover{
+      color: var(--colorFontBlack);
+    }
+  }
+}

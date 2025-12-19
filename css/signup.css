@@ -3,8 +3,7 @@
 main{
     .contact{
         display: flex;
-        max-width: 800px;
-        /* justify-content: center; */
+        max-width: var(--containerAccess);
 
         picture{
             display: none;
@@ -14,17 +13,13 @@ main{
             display: flex;
             flex-direction: column;
             width: 100%;
-            /* max-width: 450px; */
             margin: 0 auto;
             padding: 2rem;
             background-color: var(--colorBgSecond);
-            /* border-radius: 0.75rem;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1); */
 
             header h1{
-                /* text-align: center; */
                 margin-bottom: 1.5rem;
-                font-size: clamp(1.5rem, 3vw, 2.2rem);
+                font-size: var(--fontAccessPages)
 
             }
 
@@ -36,7 +31,7 @@ main{
                 label{
                     display: block;
                     margin-bottom: 0.35rem;
-                    font-weight: 600;
+                    font-weight: var(--fontWeightSemibold);
                     color: var(--colorFontBlack);
                 }
 
@@ -44,9 +39,12 @@ main{
                     width: 100%;
                     padding: 0.75rem 1rem;
                     border: none;
-                    /* border-radius: 0.5rem; */
                     font-size: 1rem;
-                    background-color: #F1E3CD;
+                    background-color: var(--colorInput);
+
+                    &:focus{
+                        outline: 3px solid var(--colorImgOverlay)
+                    }
                 }
 
                 button{
@@ -55,13 +53,18 @@ main{
                     border: none;
                     background-color: var(--colourBgMain);
                     color: var(--colorFontWhite);
-                    /* border-radius: 0.5rem; */
                     cursor: pointer;
                     font-size: 1rem;
-                    font-weight: 600;
+                    font-weight: var(--fontWeightSemibold);
+                    min-width: var(--touch-min-width); 
+                    min-height: var(--touch--min-height);
 
                     &:hover{
                         opacity: 0.9;
+                    }
+
+                    &:focus{
+                        outline: 3px solid var(--colorImgOverlay)
                     }
                 }
             }
@@ -71,7 +74,7 @@ main{
 
 @media(min-width: 600px){
     main{ 
-        padding: 50px; 
+        padding: 3rem;
 
         .contact > picture{
             display: block;
@@ -85,7 +88,7 @@ main{
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background-color: rgba(19, 22, 26, 0.5); 
+                background-color: var(--colorImgOverlay); 
                 z-index: 1;
             }
 

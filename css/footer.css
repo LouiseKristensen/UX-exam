@@ -4,15 +4,15 @@ footer{
   display: grid;
   background-color: var(--colourBgMain);
   grid-template-columns: 1fr;
-  gap: 20px;
-  padding: 30px;
+  gap: 1.25rem;
+  padding: 1.8rem;
 
   section {
     display: flex;
     flex-direction: column;
 
-    header h6 {
-      margin-bottom: 10px;
+    header h3 {
+      margin-bottom: 0.6rem;
       color: var(--colorFontWhite); 
       font-size: var(--fontFooter); 
       font-weight: var(--fontWeightSemibold);
@@ -23,16 +23,23 @@ footer{
       padding: 0;
 
       li {
-        margin-bottom: 5px;
+        margin-bottom: 0.3rem;
 
         a {
           text-decoration: none;
           color: var(--colorFontWhite); 
+          min-width: var(--touch-min-width); 
+          min-height: var(--touch--min-height);
 
           &:hover {
-            background-color: #F1E3CD;
-            color: black;
+            background-color: var(--colorBgSecond);
+            color: var(--colorFontBlack);
             cursor: pointer;
+          }
+
+          &:focus{
+            background-color: var(--colorBgSecond);
+            color: var(--colorFontBlack);
           }
         }
       }

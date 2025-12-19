@@ -1,5 +1,6 @@
 import { LOCAL_STORAGE_USER_EMAIL } from './config.js';
 
+// check email in local storage 
 const email = localStorage.getItem(LOCAL_STORAGE_USER_EMAIL);
 if (email !== null) {
     document.querySelector('#login').classList.add('hidden');

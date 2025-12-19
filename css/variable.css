@@ -4,9 +4,15 @@
   /* COLORS  */
   --colourBgMain: #594a4a;
   --colorBgSecond: #E8D2AE; 
-  --colourBgComplementary: rgb(247, 247, 247);
+  --colorInput: #F1E3CD; 
+  --colourBgComplementary: #f7f7f7;
   --colorFontWhite: white; 
-  --colorFontBlack: black; 
+  --colorFontBlack: black;
+  --colorCloseDialog: #666;
+
+  
+  --colorImgOverlay: rgba(0, 0, 0, 0.5); 
+  --colorDialogBg: rgba(0, 0, 0, 0.6); 
 
 
   /* FONT */
@@ -15,23 +21,33 @@
   --fontWeightSemibold: 600;
 
 
-  --fontSectionTitles: clamp(1.125rem, 3vw, 4rem);
+  --fontSectionTitles: clamp(1.125rem, 2.5vw, 3rem);
   --fontBannerHomepage: clamp(1.5rem, 4vw + 1rem, 3rem);
   --fontHeader: clamp(1rem, 1.5vw, 1.3rem);
   --fontFooter: clamp(1rem, 1.5vw, 1.2rem);
   --fontBody: clamp(1rem, 1.2vw, 1.25rem);
-  --fontPaymentForm: 
+  --fontPaymentForm: clamp(1.5rem, 2.5vw + 1rem, 2rem);
+  --fontAccessPages: clamp(1.5rem, 3vw, 2.2rem);
+  --fontSizeCategory: 1.8rem; 
+  
   
 
 
   /* SIZE/DIMENSIONS  */
 
   --card-width: 300px;
-  --card-height: 400px;
-
   --thumbnail-dimension: 200px;
+  --img-dimension: 400px; 
   --heroHeight: clamp(30vh, 40vw, 55vh); 
   --heroHeightUnderpage: clamp(20vh, 25vw, 35vh);
+  --containerAccess: 800px; 
+  --dialog: min(90%, 420px);  
+
+  --touch-min-width: 44px;
+  --touch--min-height: 44px;
+
+  --addedItemButton: 300px; 
+
 }
 
 * {
@@ -44,4 +60,5 @@ body{
   font-family: var(--fontBase);
   background-color: var(--colourBgComplementary);
   font-size: var(--fontBody);
+  font-weight: var(--fontWeightNormal);
 }

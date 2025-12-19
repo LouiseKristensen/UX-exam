@@ -2,7 +2,7 @@
 
 nav{
   background-color: var(--colourBgMain);
-  padding: 20px;
+  padding: 1.25rem;
 
   ul{
     width: 100%;
@@ -24,17 +24,24 @@ nav{
       margin-right: auto;
       }
 
-      #btnLogout{
+      #btnLogout, #openSidebar{
         border: none;
         background-color: var(--colourBgMain);
         color: var(--colorFontWhite);
         font-size: var(--fontHeader);
         font-weight: var(--fontWeightSemibold);
+        min-width: var(--touch-min-width); 
+        min-height: var(--touch--min-height);
 
         &:hover {
-          background-color: #F1E3CD;
-          color: black;
+          background-color: var(--colorInput);
+          color: var(--colorFontBlack);
           cursor: pointer;
+        }
+
+        &:focus{
+          background-color: var(--colorBgSecond);
+          color: var(--colorFontBlack);
         }
       }
 
@@ -46,11 +53,18 @@ nav{
         color: var(--colorFontWhite);
         font-size: var(--fontHeader);
         font-weight: var(--fontWeightSemibold);
+        min-width: var(--touch-min-width); 
+        min-height: var(--touch--min-height);
 
         &:hover {
-          background-color: #F1E3CD;
-          color: black;
+          background-color: var(--colorInput);
+          color: var(--colorFontBlack);
           cursor: pointer;
+        }
+
+        &:focus{
+          background-color: var(--colorBgSecond);
+          color: var(--colorFontBlack);
         }
       }
     }  
@@ -76,20 +90,45 @@ nav{
 
   &.active{
     display: flex;
+    padding: 2rem 1.25rem;
+    gap: 0;
   }
 
   li{
     width: 100%;
 
-    a{
+    a,
+    button {
+      display: flex;
+      align-items: center;
       width: 100%;
+      padding: 1rem 0;
+      color: var(--colorFontWhite);
+      text-decoration: none;
+      font-size: var(--fontHeader);
+      font-weight: var(--fontWeightSemibold);
+      background: none;
+      border: none;
+      min-width: var(--touch-min-width); 
+      min-height: var(--touch--min-height);
+
+      &:hover{
+        background-color: var(--colorFontWhite);
+        color: var(--colorFontBlack);
+        cursor: pointer;
+      }
+
+      &:focus{
+        background-color: var(--colorBgSecond);
+        color: var(--colorFontBlack);
+      }
     }
   }
 }
 
 @media(min-width: 700px){
   nav > ul > li{
-    padding: 0 30px;
+    padding: 0 1.8rem;
   }
   nav > ul >.hideOnMobile{
     display: block;

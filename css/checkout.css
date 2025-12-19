@@ -1,40 +1,41 @@
 @import "./product.css"; 
+@import "modal.css"; 
 
 main {
-    padding: 50px 15px;
+    padding: 3rem 0.9rem;
     justify-items: normal; 
     
-    #formPayment{
+    #formCheckout{
         background-color: var(--colorBgSecond);
-        padding: 10px;
+        padding: 0.6rem;
         display: flex;
-            flex-direction: column;
-            gap: 20px;
+        flex-direction: column;
+        gap: 1.25rem;
 
         section{
-            /* display: flex;
-            flex-direction: column;
-            gap: 20px; */
-            padding: 20px 0;
+            padding: 1.25rem 0;
 
             &:last-of-type{
                 padding-bottom: 0;
             }
 
             header{
-                padding-bottom: 30px;
+                padding-bottom: 1.8rem;
 
+                > h2{
+                    font-size: var(--fontPaymentForm); 
+                }
             }
 
             div{
                 display: flex;
                 flex-direction: column;
-                padding-bottom: 15px;
+                padding-bottom: 0.9rem;
 
                 label{
                     display: block;
                     margin-bottom: 0.35rem;
-                    font-weight: 600;
+                    font-weight: var(--fontWeightSemibold);
                     color: var(--colorFontBlack);
                 }
 
@@ -42,19 +43,8 @@ main {
                     width: 100%;
                     padding: 0.75rem 1rem;
                     border: none;
-                    /* border-radius: 0.5rem; */
                     font-size: 1rem;
-                    background-color: #F1E3CD;
-                }
-            }
-
-            .checkbox{
-                display: flex;
-                flex-direction: row;
-                gap: 5px;
-
-                input{
-                    width: 20px;
+                    background-color: var(--colorInput);
                 }
             }
         }
@@ -65,13 +55,18 @@ main {
             border: none;
             background-color: var(--colourBgMain);
             color: var(--colorFontWhite);
-            /* border-radius: 0.5rem; */
             cursor: pointer;
             font-size: 1rem;
-            font-weight: 600;
+            font-weight: var(--fontWeightSemibold);
+            min-width: var(--touch-min-width); 
+            min-height: var(--touch--min-height);
 
             &:hover{
                 opacity: 0.9;
+            }
+
+            &:focus{
+                outline: 3px solid var(--colorImgOverlay)
             }
             
         }
@@ -79,18 +74,22 @@ main {
 
 }
 
+#dialogcheckout > section:last-of-type{
+    margin-top: 2rem; 
+}
+
 @media(min-width: 600px){
     main {
         justify-items: center;
 
-        #formPayment{
+        #formCheckout{
             width: 80%;
-            padding: 20px;
+            padding: 1.25rem;
 
             section > .card-info{
                 display: flex;
                 flex-direction: row;
-                gap: 20px;
+                gap: 1.25rem;
             }
         }
     } 
@@ -98,9 +97,8 @@ main {
 }
 
 @media(min-width: 900px){
-    main > #formPayment{
+    main > #formCheckout{
         width: 50%;
-        padding: 30px;
+        padding: 1.8rem;
     }
 }
-

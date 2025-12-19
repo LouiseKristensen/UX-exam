@@ -10,55 +10,62 @@
     <script src="js/logincheck.js" type="module"></script>
 </head>
 <body>
-    <nav>
+    <body>
+    <!-- NAVIGATION -->
+    <nav aria-label="Main navigation">
         <!-- MOBILE SIDEBAR -->
-        <ul class="sidebar">
-            <li><a href="#" id="closeSidebar">X</a></li>
+        <ul class="sidebar" role="menu">
+            <li><button type="button" id="closeSidebar" aria-label="Close menu">X</button></li>
 
-            <li><a href="products.html">Products</a></li>
-            <li><a href="#">Signup</a></li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Logout</a></li>
-            <li><a href="#">Shoppingcart</a></li>
+            <li><a href="products.html" title="Products">Products</a></li>
+            <li><a href="signup.html" title="Signup">Signup</a></li>
+            <li><a href="login.html" id="loginMobile" title="Login">Login</a></li>
+            <li class="hidden" id="logoutMobile"><button id="btnLogoutMobile" title="Log out">Log out</button></li>
+            <li class="hidden" id="shoppingcardMobile"><a href="shoppingcart.html" title="Shopping cart">Shopping cart</a></li>
         </ul>
 
         <!-- DESKTOP NAV -->
-        <ul>
-            <li><a href="index.html">Threadly</a></li>
+        <ul role="menubar">
+            <li><a href="index.html" title="Homepage">Threadly</a></li>
 
-            <li class="hideOnMobile"><a href="products.html">Products</a></li>
-            <li class="hideOnMobile"><a href="signup.html">Signup</a></li>
-            <li class="hideOnMobile" id="login"><a href="login.html">Login</a></li>
-            <li class="hideOnMobile hidden" id="logout"><button id="btnLogout">Log out</button></li>
-            <li class="hideOnMobile hidden" id="shoppingcard"><a href="shoppingcart.html">Shoppingcart</a></li>
+            <li class="hideOnMobile"><a href="products.html" title="Products">Products</a></li>
+            <li class="hideOnMobile"><a href="signup.html" title="Signup">Signup</a></li>
+            <li class="hideOnMobile" id="login"><a href="login.html" title="Login">Login</a></li>
+            <li class="hideOnMobile hidden" id="logout"><button id="btnLogout" title="Log out">Log out</button></li>
+            <li class="hideOnMobile hidden" id="shoppingcard"><a href="shoppingcart.html" title="Shopping cart">Shopping cart</a></li>
 
-            <li class="menuButton"><a href="#" id="openSidebar">Menu</a></li>
+            <li class="menuButton"><button type="button" id="openSidebar" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">Menu</button></li>
         </ul>
     </nav>
 
-
-  <section class="hero underpage">
-    <section class="hero-content">
-        <h1>Shop</h1>
-        <h2><a href="index.html">Home</a> > <a href="products.html">Products</a></h2>
+    <!--HERO BANNER -->
+    <section class="hero underpage">
+        <div class="hero-content">
+            <h1>Shop</h1>
+            <nav aria-label="Breadcrumb">
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li aria-current="page">Products</li>
+                </ol>
+            </nav> 
+        </div>
     </section>
-  </section>
 
     <main>
         <!-- API PRODUCTS CARDS -->
         <section id="products-list">
             <header>
-                <h4>Products</h4>
+                <h2>Products</h2>
             </header>
             <template id="product-card">
-                <article class="product-article">
+                <article role="region" aria-label="Product">
                     <a href="" target="_self">
                         <img src="" alt="">
                     </a>
                     <header>
-                        <h5>
-                            <a href="" target="_self"></a>
-                        </h5>
+                        <h3>
+                            <a href="" target="_self" aria-label="product title"></a>
+                        </h3>
                         <p class="price"></p>
                     </header>
                 </article>
@@ -70,7 +77,7 @@
     <footer>
         <section class="threadly">
             <header>
-                <h6>Threadly</h6>
+                <h3>Threadly</h3>
             </header>
             <ul>
                 <li><a href="#">About us</a></li>
@@ -80,17 +87,17 @@
         </section>
         <section class="customer-care">
             <header>
-                <h6>Customer Care</h6>
+                <h3>Customer Care</h3>
             </header>
             <ul>
-                <li><a href="#">Siza Guide</a></li>
+                <li><a href="#">Size Guide</a></li>
                 <li><a href="#">Help & FAQs</a></li>
                 <li><a href="#">Return My Order</a></li>
             </ul>
         </section>
         <section class="terma-policies">
             <header>
-                <h6>Terma & Policies</h6>
+                <h3>Terms & Policies</h3>
             </header>
             <ul>
                 <li><a href="#">Shipping Info</a></li>
@@ -100,7 +107,7 @@
         </section>
         <section class="follow-us">
             <header>
-                <h6>Follow Us</h6>
+                <h3>Follow Us</h3>
             </header>
             <ul>
                 <li><a href="#">Instagram</a></li>

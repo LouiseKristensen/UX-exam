@@ -13,38 +13,38 @@
 </head>
 <body>
     <!-- NAVIGATION -->
-    <nav>
+    <nav aria-label="Main navigation">
         <!-- MOBILE SIDEBAR -->
-        <ul class="sidebar">
-            <li><a href="#" id="closeSidebar">X</a></li>
+        <ul class="sidebar" role="menu">
+            <li><button type="button" id="closeSidebar" aria-label="Close menu">X</button></li>
 
-            <li><a href="products.html">Products</a></li>
-            <li><a href="signup.html">Signup</a></li>
-            <li><a href="login.html" id="loginMobile">Login</a></li>
-            <li class="hidden" id="logoutMobile"><button id="btnLogoutMobile">Log out</button></li>
-            <li><a href="shoppingcart.html">Shoppingcart</a></li>
+            <li><a href="products.html" title="Products">Products</a></li>
+            <li><a href="signup.html" title="Signup">Signup</a></li>
+            <li><a href="login.html" id="loginMobile" title="Login">Login</a></li>
+            <li class="hidden" id="logoutMobile"><button id="btnLogoutMobile" title="Log out">Log out</button></li>
+            <li class="hidden" id="shoppingcardMobile"><a href="shoppingcart.html" title="Shopping cart">Shopping cart</a></li>
         </ul>
 
         <!-- DESKTOP NAV -->
-        <ul>
-            <li><a href="index.html">Threadly</a></li>
+        <ul role="menubar">
+            <li><a href="index.html" title="Homepage">Threadly</a></li>
 
-            <li class="hideOnMobile"><a href="products.html">Products</a></li>
-            <li class="hideOnMobile"><a href="signup.html">Signup</a></li>
-            <li class="hideOnMobile" id="login"><a href="login.html">Login</a></li>
-            <li class="hideOnMobile hidden" id="logout"><button id="btnLogout">Log out</button></li>
-            <li class="hideOnMobile hidden" id="shoppingcard"><a href="shoppingcart.html">Shoppingcart</a></li>
+            <li class="hideOnMobile"><a href="products.html" title="Products">Products</a></li>
+            <li class="hideOnMobile"><a href="signup.html" title="Signup">Signup</a></li>
+            <li class="hideOnMobile" id="login"><a href="login.html" title="Login">Login</a></li>
+            <li class="hideOnMobile hidden" id="logout"><button id="btnLogout" title="Log out">Log out</button></li>
+            <li class="hideOnMobile hidden" id="shoppingcard"><a href="shoppingcart.html" title="Shopping cart">Shopping cart</a></li>
 
-            <li class="menuButton"><a href="#" id="openSidebar">Menu</a></li>
+            <li class="menuButton"><button type="button" id="openSidebar" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">Menu</button></li>
         </ul>
     </nav>
 
     <!-- HERO BANNER -->
     <section class="hero">
-        <section class="hero-content">
+        <div class="hero-content">
             <h1>Elevate Your Style & Your Tech.</h1>
             <h2>New Drops. New Energy.</h2>
-        </section>
+        </div>
     </section>
   
     <main>
@@ -58,45 +58,45 @@
                         <source media="(min-width:600px)" srcset="images/men-tablet.avif">
                         <img src="images/men-mobile.avif" alt="Threadly mens clothing options">
                     </picture>
-                    <a href="#">Men</a>
+                    <h4><a href="#">Men</a></h4>
                 </article>
                 <article class="category-card">
                     <picture>
                         <source media="(min-width:600px)" srcset="images/accessories-tablet.avif">
-                        <img src="images/accessories-mobil.avif" alt="Threadly accessories options">
+                        <img src="images/accessories-mobile.avif" alt="Threadly accessories options">
                     </picture>
-                    <a href="#">Accessory</a>
+                    <h4><a href="#">Accessory</a></h4>
                 </article>
                 <article class="category-card">
                     <picture>
                         <source media="(min-width:600px)" srcset="images/women-tablet.avif">
                         <img src="images/women-mobile.avif" alt="Threadly womens clothing options">
                     </picture>
-                    <a href="#">Women</a>
+                    <h4><a href="#">Women</a></h4>
                 </article>
                 <article class="category-card">
                     <picture>
-                        <source media="(min-width:600px)" srcset="images/women-tablet.avif">
-                        <img src="images/women-mobile.avif" alt="Threadly womens clothing options">
+                        <source media="(min-width:600px)" srcset="images/electronics-tablet.avif">
+                        <img src="images/electronics-mobile.avif" alt="Threadly electronics options">
                     </picture>
-                    <a href="#">Electronics</a>
+                    <h4><a href="#">Electronics</a></h4>
                 </article>
         </section>
 
         <!-- API PRODUCTS CARDS -->
         <section id="products-list">
             <header>
-                <h4>Best Sellers</h4>
+                <h3>Best Sellers</h3>
             </header>
             <template id="product-card">
-                <article class="product-article">
-                    <a href="" target="_self">
+                <article>
+                    <a href="" target="_self" >
                         <img src="" alt="">
                     </a>
                     <header>
-                        <h5>
+                        <h4>
                             <a href="" target="_self"></a>
-                        </h5>
+                        </h4>
                         <p class="price"></p>
                     </header>
                 </article>
@@ -108,7 +108,7 @@
     <footer>
         <section class="threadly">
             <header>
-                <h6>Threadly</h6>
+                <h3>Threadly</h3>
             </header>
             <ul>
                 <li><a href="#">About us</a></li>
@@ -118,17 +118,17 @@
         </section>
         <section class="customer-care">
             <header>
-                <h6>Customer Care</h6>
+                <h3>Customer Care</h3>
             </header>
             <ul>
-                <li><a href="#">Siza Guide</a></li>
+                <li><a href="#">Size Guide</a></li>
                 <li><a href="#">Help & FAQs</a></li>
                 <li><a href="#">Return My Order</a></li>
             </ul>
         </section>
         <section class="terma-policies">
             <header>
-                <h6>Terma & Policies</h6>
+                <h3>Terms & Policies</h3>
             </header>
             <ul>
                 <li><a href="#">Shipping Info</a></li>
@@ -138,7 +138,7 @@
         </section>
         <section class="follow-us">
             <header>
-                <h6>Follow Us</h6>
+                <h3>Follow Us</h3>
             </header>
             <ul>
                 <li><a href="#">Instagram</a></li>

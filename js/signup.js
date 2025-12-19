@@ -1,6 +1,7 @@
 import { USERS_BASE_URL } from './config.js';
 import { showModal } from './modal.js';
 
+// signup form 
 document.querySelector('#formSignup').addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -9,11 +10,13 @@ document.querySelector('#formSignup').addEventListener('submit', (e) => {
     const password = e.target.txtPassword.value.trim();
     const repeatPassword = e.target.txtRepeatPassword.value.trim();
 
+    // check password 
     if (password !== repeatPassword) {
         showModal('Validation error', 'Both passwords must match.');
         return false;
     }
 
+    // create new user 
     const newUser = {
         name: name, 
         email: email,

@@ -12,114 +12,115 @@
 
 </head>
 <body>
+   <body>
     <!-- NAVIGATION -->
-    <nav>
+    <nav aria-label="Main navigation">
         <!-- MOBILE SIDEBAR -->
-        <ul class="sidebar">
-            <li><a href="#" id="closeSidebar">X</a></li>
+        <ul class="sidebar" role="menu">
+            <li><button type="button" id="closeSidebar" aria-label="Close menu">X</button></li>
 
-            <li><a href="products.html">Products</a></li>
-            <li><a href="signup.html">Signup</a></li>
-            <li><a href="login.html" id="loginMobile">Login</a></li>
-            <li class="hidden" id="logoutMobile"><button id="btnLogoutMobile">Log out</button></li>
-            <li><a href="shoppingcart.html">Shoppingcart</a></li>
+            <li><a href="products.html" title="Products">Products</a></li>
+            <li><a href="signup.html" title="Signup">Signup</a></li>
+            <li><a href="login.html" id="loginMobile" title="Login">Login</a></li>
+            <li class="hidden" id="logoutMobile"><button id="btnLogoutMobile" title="Log out">Log out</button></li>
+            <li class="hidden" id="shoppingcardMobile"><a href="shoppingcart.html" title="Shopping cart">Shopping cart</a></li>
         </ul>
 
         <!-- DESKTOP NAV -->
-        <ul>
-            <li><a href="index.html">Threadly</a></li>
+        <ul role="menubar">
+            <li><a href="index.html" title="Homepage">Threadly</a></li>
 
-            <li class="hideOnMobile"><a href="products.html">Products</a></li>
-            <li class="hideOnMobile"><a href="signup.html">Signup</a></li>
-            <li class="hideOnMobile" id="login"><a href="login.html">Login</a></li>
-            <li class="hideOnMobile hidden" id="logout"><button id="btnLogout">Log out</button></li>
-            <li class="hideOnMobile hidden" id="shoppingcard"><a href="shoppingcart.html">Shoppingcart</a></li>
+            <li class="hideOnMobile"><a href="products.html" title="Products">Products</a></li>
+            <li class="hideOnMobile"><a href="signup.html" title="Signup">Signup</a></li>
+            <li class="hideOnMobile" id="login"><a href="login.html" title="Login">Login</a></li>
+            <li class="hideOnMobile hidden" id="logout"><button id="btnLogout" title="Log out">Log out</button></li>
+            <li class="hideOnMobile hidden" id="shoppingcard"><a href="shoppingcart.html" title="Shopping cart">Shopping cart</a></li>
 
-            <li class="menuButton"><a href="#" id="openSidebar">Menu</a></li>
+            <li class="menuButton"><button type="button" id="openSidebar" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">Menu</button></li>
         </ul>
     </nav>
 
     <!-- HERO BANNER -->
     <section class="hero underpage">
-        <section class="hero-content">
-            <h1>Payment</h1>
-            <h2><a href="index.html">Home</a> > <a href="shoppingcart.html">Shoppingcart</a> > <a href="payment.html">Payment</a></h2>
-        </section>
+        <div class="hero-content">
+            <h1>Checkout</h1>
+            <nav aria-label="Breadcrumb">
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shoppingcart.html">Shopping cart</a></li>
+                    <li aria-current="page">Checkout</li>
+                </ol>
+            </nav> 
+        </div>
     </section>
   
     <main>
-        <form id="formPayment">
+        <!-- CHECKOUT FORM -->
+        <form id="formCheckout">
             <section>
                 <header>
-                    <h3>Delivery Address</h3>
+                    <h2>Delivery Address</h2>
                 </header>
                 <div>
                     <label for="deliveryName">Full name</label>
-                    <input type="text" name="deliveryName" required>
+                    <input type="text" name="deliveryName" required value="Donald Duck">
                 </div>
                 <div>
                     <label for="deliveryStreet">Street address</label>
-                    <input type="text" name="deliveryStreet" required>
+                    <input type="text" name="deliveryStreet" required value="13 Quack Street">
                 </div>
                 <div>
                     <label for="deliveryCity">City</label>
-                    <input type="text" name="deliveryCity" required>
+                    <input type="text" name="deliveryCity" required value="Duckburg">
                 </div>
                 <div>
                     <label for="deliveryZip">Postal code</label>
-                    <input type="text" name="deliveryZip" required>
+                    <input type="text" name="deliveryZip" required value="2123">
                 </div>
             </section>
             <section>
                 <header>
-                    <h4>Billing Address</h4>
+                    <h2>Billing Address</h2>
                 </header>
                 <div id="billing-fields">
                     <div>
                         <label for="billingName">Full name</label>
-                        <input type="text" name="billingName">
+                        <input type="text" name="billingName" value="Mickey Mouse">
                     </div>
                     <div>
                         <label for="billingStreet">Street address</label>
-                        <input type="text" name="billingStreet">
+                        <input type="text" name="billingStreet" value="22 Mouse street">
                     </div>
                     <div>
                         <label for="billingCity">City</label>
-                        <input type="text" name="billingCity">
+                        <input type="text" name="billingCity" value="Mouseton">
                     </div>
                     <div>
                         <label for="billingZip">Postal code</label>
-                        <input type="text" name="billingZip">
+                        <input type="text" name="billingZip" value="2524">
                     </div>
                 </div>
             </section>
             <section>
                 <header>
-                    <h5>Payment Information</h5>
+                    <h2>Payment Information</h2>
                 </header>
                 <div>
                     <label for="cardName">Cardholder name</label>
-                    <input type="text" name="cardName" required>
+                    <input type="text" name="cardName" required value="Mickey Mouse">
                 </div>
                 <div>
                     <label for="cardNumber">Card Number</label>
-                    <input 
-                        type="text"
-                        name="cardNumber"
-                        maxlength="19"
-                        placeholder="1234 5678 9012 3456"
-                        required
-                        pattern="^[0-9\s]{13,19}$"
-                    >
+                    <input type="text" name="cardNumber" maxlength="19" placeholder="1234 5678 9012 3456" required value="1234 5678 9012 3456">
                 </div>
                 <div class="card-info">
                     <div>
                         <label for="expiry">Expiry (MM/YY)</label>
-                        <input type="text" name="expiry" placeholder="08/27" required pattern="^(0[1-9]|1[0-2])\/\d{2}$">
+                        <input type="text" name="expiry" placeholder="08/27" required value="08/27">
                     </div>
                     <div>
                         <label for="cvc">CVC</label>
-                        <input type="text" name="cvc" maxlength="4" required pattern="^[0-9]{3,4}$">
+                        <input type="text" name="cvc" maxlength="3" required value="333">
                     </div>
                 </div>
             </section>
@@ -131,7 +132,7 @@
     <footer>
         <section class="threadly">
             <header>
-                <h6>Threadly</h6>
+                <h3>Threadly</h3>
             </header>
             <ul>
                 <li><a href="#">About us</a></li>
@@ -141,17 +142,17 @@
         </section>
         <section class="customer-care">
             <header>
-                <h6>Customer Care</h6>
+                <h3>Customer Care</h3>
             </header>
             <ul>
-                <li><a href="#">Siza Guide</a></li>
+                <li><a href="#">Size Guide</a></li>
                 <li><a href="#">Help & FAQs</a></li>
                 <li><a href="#">Return My Order</a></li>
             </ul>
         </section>
         <section class="terma-policies">
             <header>
-                <h6>Terma & Policies</h6>
+                <h3>Terms & Policies</h3>
             </header>
             <ul>
                 <li><a href="#">Shipping Info</a></li>
@@ -161,7 +162,7 @@
         </section>
         <section class="follow-us">
             <header>
-                <h6>Follow Us</h6>
+                <h3>Follow Us</h3>
             </header>
             <ul>
                 <li><a href="#">Instagram</a></li>
@@ -171,14 +172,18 @@
         </section>
     </footer>
 
-    <dialog id="dialogPayment">
+
+    <!-- DIALOG -->
+    <dialog id="dialogcheckout" role="dialog" aria-labelledby="dialogTitle" aria-describedby="dialogDesc">
         <header>
-            <h1>Order Received</h1>
+            <h2>Order Received</h2>
             <button class="close">&times;</button>
         </header>
 
         <section>
-            <h3>Delivery Address</h3>
+            <header>
+                <h3>Delivery Address</h3>
+            </header>
             <p>Full name: <span id="form-delivery-name"></span></p>
             <p>Street: <span id="form-delivery-street"></span></p>
             <p>City: <span id="form-delivery-city"></span></p>
@@ -186,7 +191,9 @@
         </section>
 
         <section>
-            <h4>Billing Address</h4>
+            <header>
+                <h3>Billing Address</h3>
+            </header>
             <p>Full name: <span id="form-billing-name"></span></p>
             <p>Street: <span id="form-billing-street"></span></p>
             <p>City: <span id="form-billing-city"></span></p>

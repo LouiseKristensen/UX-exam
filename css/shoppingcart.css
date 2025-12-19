@@ -1,0 +1,127 @@
+@import "./product.css"; 
+
+main{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+
+    #shoppingcard-list{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        gap: 1rem; 
+
+        > header {
+            grid-column: 1 / -1;
+            text-align: center;
+            font-size: var(--fontSectionTitles);
+            font-weight: inherit;
+            margin: 0;
+            padding-bottom: 0.6rem;
+        }
+
+        .product-article{
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+
+            .thumbnail{
+                width: var(--thumbnail-dimension);
+                height: var(--thumbnail-dimension);
+                object-fit: contain;
+                display: block;
+            }
+      
+            .product-info{
+                display: flex;
+                flex-direction: column;
+
+                header a{
+                    color: black;
+                    text-decoration: none;
+                }
+                
+
+                .price::before {
+                    content: "Price: ";
+                }
+
+                .remove{
+                    padding: 0.6rem;
+                    background-color: var(--colorBgSecond);
+                    color: var(--colorFontBlack);
+                    border: none;
+                    margin-top: 0.9rem;
+                    font-weight: var(--fontWeightSemibold);
+                    min-width: var(--touch-min-width); 
+                    min-height: var(--touch--min-height);
+                    width: 100%;
+
+                    &:hover{
+                        background-color: var(--colourBgMain);
+                        color: var(--colorFontWhite);
+                    }
+                }
+
+            }
+        }
+    }
+
+    #total-products::after{
+        content: " Products";
+    }
+
+    #total-price{
+        margin-bottom: 2rem;
+        padding-top: 0.5rem;
+        display: flex;
+        justify-content: flex-end;
+        gap: 0.5rem;
+        font-weight: var(--fontWeightSemibold);
+
+        &::before{
+            content: "Total incl. moms ";
+        }
+    }
+
+    section:last-of-type{
+        width: 100%;
+
+        a{
+            padding: 0.6rem;
+            background-color: var(--colorBgSecond);
+            color: var(--colorFontBlack);
+            border: none;
+            font-weight: var(--fontWeightSemibold);
+            text-decoration: none;
+            min-width: var(--touch-min-width); 
+            min-height: var(--touch--min-height);
+
+
+            &:hover{
+                background-color: var(--colourBgMain);
+                color: var(--colorFontWhite);
+            }
+        }
+    }
+}
+
+@media(min-width: 600px){
+    main{
+        #shoppingcard-list > .product-article {
+            flex-direction: row;
+            gap: 1.25rem;
+
+            .product-info > .remove{
+                width: var(--addedItemButton)
+            }
+        }
+    }
+}
+
+@media(min-width:900px){
+    main{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+

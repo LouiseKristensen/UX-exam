@@ -5,32 +5,56 @@
 
     .hero-content{
         align-items: start;
-        padding-left: 20px;
+        padding-left: 1.25rem;
 
-        h2 {
-            font-size: 15px;
+        h1 {
+            font-size: var(--fontSectionTitles);
+        }
 
-            > a{
-                inherits: h2;
-                color: var(--colorFontWhite);
-                text-decoration: none;
+        nav{
+            background-color: transparent !important;
+            padding: 0; 
+
+            .breadcrumb {
+                display: flex;
+                flex-flow: row wrap;
+                gap: 0.5rem;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                li::after {
+                    content: ">";
+                    margin-left: 0.5rem;
+                }
+
+                li:last-child::after {
+                    content: "";
+                }
+
+                li > a{
+                    color: var(--colorFontWhite);
+                    text-decoration: none;
+                    min-width: var(--touch-min-width); 
+                    min-height: var(--touch--min-height);
+                }
             }
         }
+
     }
 }
 
 main{
-    padding: 50px 15px;
+    padding: 3rem 0.9rem;
 
     #card-info{
         section{
             display: flex;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: 1rem;
 
             img{
-                /* height: 200px; */
-                width: 200px;
+                width: var( --thumbnail-dimension); 
                 height: auto;
             }
         }
@@ -38,9 +62,9 @@ main{
         #card-details{
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 0.6rem;
 
-            header > h3{
+            header > h2{
                 font-size: var(--fontSectionTitles);
             }
 
@@ -60,17 +84,29 @@ main{
                 }
             }
 
+            #item-category::before{
+                content: "Category: ";
+                font-weight: var(--fontWeightSemibold);
+            }
+
             button{
-                padding: 10px;
+                padding: 0.6rem;
                 background-color: var(--colorBgSecond);
                 color: var(--colorFontBlack);
                 border: none;
-                margin-top: 15px;
+                margin-top: 0.9rem;
                 font-weight: var(--fontWeightSemibold);
+                cursor: pointer;
+                min-width: var(--touch-min-width); 
+                min-height: var(--touch--min-height);
 
                 &:hover{
                     background-color: var(--colourBgMain);
                     color: var(--colorFontWhite);
+                }
+
+                &:focus{
+                    outline: 3px solid var(--colorImgOverlay)
                 }
             }
         }
@@ -80,14 +116,14 @@ main{
 
 @media(min-width: 600px){
     main{
-        padding: 40px;
+        padding: 2.5rem;
 
         #card-info{
             display: flex;
-            gap: 20px;
+            gap: 1.25rem;
 
             #card-details > button{
-                width: 50%;
+                width: 80%
             }
         }
 
@@ -100,7 +136,7 @@ main{
         gap: 50px;
 
         section > img{
-            width: 400px;
+            width: var(--img-dimension);
             height: auto;
         }
     }
