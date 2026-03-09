@@ -13,9 +13,9 @@
 </head>
 <body>
     <!-- NAVIGATION -->
-    <nav aria-label="Main navigation">
+    <nav>
         <!-- MOBILE SIDEBAR -->
-        <ul class="sidebar" role="menu">
+        <ul class="sidebar">
             <li><button type="button" id="closeSidebar" aria-label="Close menu">X</button></li>
 
             <li><a href="products.html" title="Products">Products</a></li>
@@ -26,7 +26,7 @@
         </ul>
 
         <!-- DESKTOP NAV -->
-        <ul role="menubar">
+        <ul>
             <li><a href="index.html" title="Homepage">Threadly</a></li>
 
             <li class="hideOnMobile"><a href="products.html" title="Products">Products</a></li>
@@ -35,7 +35,7 @@
             <li class="hideOnMobile hidden" id="logout"><button id="btnLogout" title="Log out">Log out</button></li>
             <li class="hideOnMobile hidden" id="shoppingcard"><a href="shoppingcart.html" title="Shopping cart">Shopping cart</a></li>
 
-            <li class="menuButton"><button type="button" id="openSidebar" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">Menu</button></li>
+            <li class="menuButton"><button type="button" id="openSidebar" aria-label="Open menu" aria-expanded="false">Menu</button></li>
         </ul>
     </nav>
 
@@ -54,32 +54,40 @@
                 <h3>Shop by category </h3>
             </header>
                 <article class="category-card">
-                    <picture>
-                        <source media="(min-width:600px)" srcset="images/men-tablet.avif">
-                        <img src="images/men-mobile.avif" alt="Threadly mens clothing options">
-                    </picture>
-                    <h4><a href="#">Men</a></h4>
+                    <a href="products.html?category=men's clothing">
+                        <picture>
+                            <source media="(min-width:600px)" srcset="images/men-tablet.avif">
+                            <img src="images/men-mobile.avif" alt="Threadly mens clothing options">
+                        </picture>
+                        <h4>Men</h4>
+                    </a>
                 </article>
                 <article class="category-card">
-                    <picture>
-                        <source media="(min-width:600px)" srcset="images/accessories-tablet.avif">
-                        <img src="images/accessories-mobile.avif" alt="Threadly accessories options">
-                    </picture>
-                    <h4><a href="#">Accessory</a></h4>
+                    <a href="products.html?category=jewelery">
+                        <picture>
+                            <source media="(min-width:600px)" srcset="images/accessories-tablet.avif">
+                            <img src="images/accessories-mobile.avif" alt="Threadly accessories options">
+                        </picture>
+                        <h4>Accessory</h4>
+                    </a>
                 </article>
                 <article class="category-card">
-                    <picture>
-                        <source media="(min-width:600px)" srcset="images/women-tablet.avif">
-                        <img src="images/women-mobile.avif" alt="Threadly womens clothing options">
-                    </picture>
-                    <h4><a href="#">Women</a></h4>
+                    <a href="products.html?category=women's clothing">
+                        <picture>
+                            <source media="(min-width:600px)" srcset="images/women-tablet.avif">
+                            <img src="images/women-mobile.avif" alt="Threadly womens clothing options">
+                        </picture>
+                        <h4>Women</h4>
+                    </a>
                 </article>
                 <article class="category-card">
-                    <picture>
-                        <source media="(min-width:600px)" srcset="images/electronics-tablet.avif">
-                        <img src="images/electronics-mobile.avif" alt="Threadly electronics options">
-                    </picture>
-                    <h4><a href="#">Electronics</a></h4>
+                    <a href="products.html?category=electronics">
+                        <picture>
+                            <source media="(min-width:600px)" srcset="images/electronics-tablet.avif">
+                            <img src="images/electronics-mobile.avif" alt="Threadly electronics options">
+                        </picture>
+                        <h4>Electronics</h4>
+                    </a>
                 </article>
         </section>
 

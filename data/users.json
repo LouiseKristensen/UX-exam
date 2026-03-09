@@ -11,6 +11,18 @@
       "name": "Ole",
       "email": "ole@example.com",
       "password": "Olech20%"
+    },
+    {
+      "id": "d8d5",
+      "name": "signe",
+      "email": "signe@example.com",
+      "password": "Signe26!"
+    },
+    {
+      "id": "cccd",
+      "name": "sarah",
+      "email": "sarah@example.com",
+      "password": "Sarah23!"
     }
   ]
 }

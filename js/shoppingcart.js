@@ -1,12 +1,6 @@
-import { LOCAL_STORAGE_USER_EMAIL } from "./config.js"; 
+import { getCartKey, assignLink } from "./config.js"; 
 
-const assignLink = (anchor, url, text) => {
-    anchor.href = url; 
-    anchor.title = text; 
-}; 
-
-const userEmail = localStorage.getItem(LOCAL_STORAGE_USER_EMAIL);
-const cartKey = `SHOPPING_CART_${userEmail}`; 
+const cartKey = getCartKey(); 
 let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
 
 // create the article 

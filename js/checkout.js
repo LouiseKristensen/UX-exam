@@ -1,7 +1,6 @@
-import { LOCAL_STORAGE_USER_EMAIL } from "./config.js";
+import { getCartKey } from "./config.js";
 
-const userEmail = localStorage.getItem(LOCAL_STORAGE_USER_EMAIL);
-const cartKey = localStorage.getItem(`SHOPPING_CART_${userEmail}`);
+const cartKey = getCartKey();
 
 // checkout form 
 document.querySelector('#formCheckout').addEventListener('submit', (e) => {

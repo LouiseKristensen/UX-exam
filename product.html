@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product</title>
     <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/modal.css">
     <script src="js/navigationMenu.js" type="module"></script>
     <script src="js/product.js" type="module"></script>
     <script src="js/breadcrumb.js" type="module"></script>
     <script src="js/logincheck.js" type="module"></script>
 </head>
 <body>
-    <body>
     <!-- NAVIGATION -->
-    <nav aria-label="Main navigation">
+    <nav>
         <!-- MOBILE SIDEBAR -->
-        <ul class="sidebar" role="menu">
+        <ul class="sidebar">
             <li><button type="button" id="closeSidebar" aria-label="Close menu">X</button></li>
 
             <li><a href="products.html" title="Products">Products</a></li>
@@ -26,7 +26,7 @@
         </ul>
 
         <!-- DESKTOP NAV -->
-        <ul role="menubar">
+        <ul>
             <li><a href="index.html" title="Homepage">Threadly</a></li>
 
             <li class="hideOnMobile"><a href="products.html" title="Products">Products</a></li>
@@ -35,7 +35,7 @@
             <li class="hideOnMobile hidden" id="logout"><button id="btnLogout" title="Log out">Log out</button></li>
             <li class="hideOnMobile hidden" id="shoppingcard"><a href="shoppingcart.html" title="Shopping cart">Shopping cart</a></li>
 
-            <li class="menuButton"><button type="button" id="openSidebar" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">Menu</button></li>
+            <li class="menuButton"><button type="button" id="openSidebar" aria-label="Open menu" aria-expanded="false">Menu</button></li>
         </ul>
     </nav>
     
@@ -115,7 +115,15 @@
             </ul>
         </section>
     </footer>
-    
+
+    <!-- DIALOG -->
+    <dialog id="mdlInfo" aria-label="Information dialog">
+        <button class="close" aria-label="Close dialog">&times;</button>
+        <header>
+            <h2 id="mdlInfoTitle"></h2>
+        </header>
+        <p id="mdlInfoDesc"></p>
+    </dialog>
 </body>
 </html>
 

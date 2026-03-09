@@ -10,11 +10,10 @@
     <script src="js/login.js" type="module"></script>
 </head>
 <body>
-    <body>
     <!-- NAVIGATION -->
-    <nav aria-label="Main navigation">
+    <nav>
         <!-- MOBILE SIDEBAR -->
-        <ul class="sidebar" role="menu">
+        <ul class="sidebar">
             <li><button type="button" id="closeSidebar" aria-label="Close menu">X</button></li>
 
             <li><a href="products.html" title="Products">Products</a></li>
@@ -25,7 +24,7 @@
         </ul>
 
         <!-- DESKTOP NAV -->
-        <ul role="menubar">
+        <ul>
             <li><a href="index.html" title="Homepage">Threadly</a></li>
 
             <li class="hideOnMobile"><a href="products.html" title="Products">Products</a></li>
@@ -34,7 +33,7 @@
             <li class="hideOnMobile hidden" id="logout"><button id="btnLogout" title="Log out">Log out</button></li>
             <li class="hideOnMobile hidden" id="shoppingcard"><a href="shoppingcart.html" title="Shopping cart">Shopping cart</a></li>
 
-            <li class="menuButton"><button type="button" id="openSidebar" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">Menu</button></li>
+            <li class="menuButton"><button type="button" id="openSidebar" aria-label="Open menu" aria-expanded="false">Menu</button></li>
         </ul>
     </nav>
     
@@ -52,7 +51,7 @@
                 <form id="formLogin">
                     <div>
                         <label for="txtEmail">E-mail</label>
-                        <input type="email" id="txtEmail" required>
+                        <input type="email" id="txtEmail" required placeholder="sofie@example.com">
                     </div>
                     <div>
                         <label for="txtPassword">Password</label>
@@ -111,12 +110,12 @@
     </footer>
 
     <!-- DIALOG -->
-    <dialog id="mdlInfo" role="dialog" aria-labelledby="mdlInfoTitle" aria-describedby="mdlInfoDesc">
+    <dialog id="mdlInfo" aria-label="Information dialog">
+        <button class="close" aria-label="Close dialog">&times;</button>
         <header>
-            <h2></h2>
-            <button class="close">&times;</button>
+            <h2 id="mdlInfoTitle"></h2>
         </header>
-        <p></p>
+        <p id="mdlInfoDesc"></p>
     </dialog>
 </body>
 </html>

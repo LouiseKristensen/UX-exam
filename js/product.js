@@ -1,4 +1,5 @@
-import {BASE_URL, LOCAL_STORAGE_USER_EMAIL} from "./config.js"; 
+import {BASE_URL, getCartKey} from "./config.js"; 
+import { showModal } from './modal.js';
 
 let currentProduct = null;
 
@@ -26,8 +27,7 @@ const showCards = (info) => {
 document.querySelector("#shoppingcartbtn").addEventListener("click", (e) => {
     e.preventDefault(); 
 
-    const userEmail = localStorage.getItem(LOCAL_STORAGE_USER_EMAIL);
-    const cartKey = `SHOPPING_CART_${userEmail}`;
+    const cartKey = getCartKey();
 
     let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
     cart.push({
@@ -38,6 +38,8 @@ document.querySelector("#shoppingcartbtn").addEventListener("click", (e) => {
         });
         
     localStorage.setItem(cartKey, JSON.stringify(cart));
+
+    showModal('Added to cart', 'The product has been added to your basket.');
 
 }); 
 

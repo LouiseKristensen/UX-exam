@@ -12,11 +12,10 @@
 
 </head>
 <body>
-   <body>
     <!-- NAVIGATION -->
-    <nav aria-label="Main navigation">
+    <nav>
         <!-- MOBILE SIDEBAR -->
-        <ul class="sidebar" role="menu">
+        <ul class="sidebar">
             <li><button type="button" id="closeSidebar" aria-label="Close menu">X</button></li>
 
             <li><a href="products.html" title="Products">Products</a></li>
@@ -27,7 +26,7 @@
         </ul>
 
         <!-- DESKTOP NAV -->
-        <ul role="menubar">
+        <ul>
             <li><a href="index.html" title="Homepage">Threadly</a></li>
 
             <li class="hideOnMobile"><a href="products.html" title="Products">Products</a></li>
@@ -36,7 +35,7 @@
             <li class="hideOnMobile hidden" id="logout"><button id="btnLogout" title="Log out">Log out</button></li>
             <li class="hideOnMobile hidden" id="shoppingcard"><a href="shoppingcart.html" title="Shopping cart">Shopping cart</a></li>
 
-            <li class="menuButton"><button type="button" id="openSidebar" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">Menu</button></li>
+            <li class="menuButton"><button type="button" id="openSidebar" aria-label="Open menu" aria-expanded="false">Menu</button></li>
         </ul>
     </nav>
 
@@ -63,19 +62,19 @@
                 </header>
                 <div>
                     <label for="deliveryName">Full name</label>
-                    <input type="text" name="deliveryName" required value="Donald Duck">
+                    <input type="text" name="deliveryName" required placeholder="Donald Duck" value="Donald Duck">
                 </div>
                 <div>
                     <label for="deliveryStreet">Street address</label>
-                    <input type="text" name="deliveryStreet" required value="13 Quack Street">
+                    <input type="text" name="deliveryStreet" required placeholder="13 Quack Street" value="13 Quack Street">
                 </div>
                 <div>
                     <label for="deliveryCity">City</label>
-                    <input type="text" name="deliveryCity" required value="Duckburg">
+                    <input type="text" name="deliveryCity" required placeholder="Duckburg" value="Duckburg">
                 </div>
                 <div>
                     <label for="deliveryZip">Postal code</label>
-                    <input type="text" name="deliveryZip" required value="2123">
+                    <input type="text" name="deliveryZip" required placeholder="2123" value="2123">
                 </div>
             </section>
             <section>
@@ -85,19 +84,19 @@
                 <div id="billing-fields">
                     <div>
                         <label for="billingName">Full name</label>
-                        <input type="text" name="billingName" value="Mickey Mouse">
+                        <input type="text" name="billingName" required placeholder="Mickey Mouse" value="Mickey Mouse">
                     </div>
                     <div>
                         <label for="billingStreet">Street address</label>
-                        <input type="text" name="billingStreet" value="22 Mouse street">
+                        <input type="text" name="billingStreet" required placeholder="22 Mouse street" value="22 Mouse street">
                     </div>
                     <div>
                         <label for="billingCity">City</label>
-                        <input type="text" name="billingCity" value="Mouseton">
+                        <input type="text" name="billingCity" required placeholder="Mouseton" value="Mouseton">
                     </div>
                     <div>
                         <label for="billingZip">Postal code</label>
-                        <input type="text" name="billingZip" value="2524">
+                        <input type="text" name="billingZip" required placeholder="2524" value="2524">
                     </div>
                 </div>
             </section>
@@ -107,7 +106,7 @@
                 </header>
                 <div>
                     <label for="cardName">Cardholder name</label>
-                    <input type="text" name="cardName" required value="Mickey Mouse">
+                    <input type="text" name="cardName" required placeholder="Mickey Mouse" value="Mickey Mouse">
                 </div>
                 <div>
                     <label for="cardNumber">Card Number</label>
@@ -174,10 +173,10 @@
 
 
     <!-- DIALOG -->
-    <dialog id="dialogcheckout" role="dialog" aria-labelledby="dialogTitle" aria-describedby="dialogDesc">
+    <dialog id="dialogcheckout" aria-labelledby="dialogTitle">
         <header>
-            <h2>Order Received</h2>
-            <button class="close">&times;</button>
+            <h2 id="dialogTitle">Order Received</h2>
+            <button class="close" aria-label="Close dialog">&times;</button>
         </header>
 
         <section>

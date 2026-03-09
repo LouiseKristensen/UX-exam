@@ -1,12 +1,15 @@
-import {BASE_URL} from "./config.js"; 
+import {BASE_URL, assignLink} from "./config.js"; 
 
-const assignLink = (anchor, url, text) => {
-    anchor.href = url; 
-    anchor.title = text; 
-}; 
+// read query parameter for category pages
+const params = new URLSearchParams(window.location.search);
+const category = params.get("category");
+   
+let url = `${BASE_URL}/products`;
+if (category) {
+    url = `${BASE_URL}/products/category/${category}`;
+}
 
-
-fetch(`${BASE_URL}/products`)
+fetch(url)
 .then(response => response.json())
 .then(data => {
     console.log(data)
@@ -40,5 +43,6 @@ fetch(`${BASE_URL}/products`)
         fragment.append(productscard);  
     }); 
     document.querySelector("#products-list").append(fragment); 
+
 })
 .catch(error => console.log(error))
